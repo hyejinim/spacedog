@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Hyejin Im, hyejin.im@tufts.edu -->
+
+<html>
+
+<head>
+
+	<title>Assignment 7 by Hyejin Im</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script src="http://threejs.org/build/three.min.js"></script>
+	<script src="http://threejs.org/examples/js/Detector.js"></script>
+	<script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script>
+	<script src="http://threejs.org/examples/js/loaders/OBJLoader.js"></script>
+	<script src="http://threejs.org/examples/js/loaders/MTLLoader.js"></script>
+	<script src="boiler.js"></script>
+	<script src="lights.js"></script>
+	<script src="utils.js"></script>
+	<script src="Scene.js"></script>
+	<script src="Dog.js"></script>
+	<script src="Laika.js"></script>
+	<script src="Friend.js"></script>
+	<script src="Meteor.js"></script>
+	<script src="Star.js"></script>
+
+	<script type="text/javascript">
+
+		function makeSceneGraph() {
+			myScene = new Scene(xLimit, yLimit, maxMeteorsZ);
+			scene.add(myScene);
+
+			lights = new Lights();
+
+			// handling resize and mouse move events
+		  document.addEventListener('mousemove', handleMouseMove, false);
+		  // for mobile
+		  // document.addEventListener('touchstart', handleTouchStart, false);
+			// document.addEventListener('touchend', handleTouchEnd, false);
+			// document.addEventListener('touchmove',handleTouchMove, false);
+		}
+
+		// This will override the one in boiler.js
+		animate = function() {
+			requestAnimationFrame(animate);
+			myScene.tick();
+			// controls.update();
+		}
+
+		function handleMouseMove(event) {
+			mousePos = {x:event.clientX, y:event.clientY};
+			updateSpeed();
+		}
+
+		function updateSpeed(){
+		  speed.x = (mousePos.x / WIDTH)*100;
+		  speed.y = (mousePos.y-windowHalfY) / 10;
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<!-- Container for three.js -->
+	<div id="theContainer">&nbsp;</div>
+</body>
+
+</html>

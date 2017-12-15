@@ -1,0 +1,10 @@
+/*Hyejin Im, hyejin.im@tufts.edu*/
+
+#theContainer{
+  background: linear-gradient(#da98db, #7553c9);
+  width:100%;
+  height:100%;
+}
+body{
+  overflow:hidden;
+}
